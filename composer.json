@@ -1,0 +1,24 @@
+{
+  "name": "antevenio/safeurl",
+  "description": "Url checking for malicious content.",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Iván Mota Alberca",
+      "email": "pinfake@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Antevenio\\SafeUrl\\": "src/",
+      "Example\\": "example/"
+    }
+  },
+  "require": {
+    "google/apiclient": "^2.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.1"
+  }
+}
