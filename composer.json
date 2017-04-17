@@ -1,5 +1,5 @@
 {
-  "name": "antevenio/safeurl",
+  "name": "antevenio/safe-url-validator",
   "description": "Url checking for malicious content.",
   "minimum-stability": "stable",
   "license": "MIT",
