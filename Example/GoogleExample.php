@@ -3,11 +3,19 @@ use Antevenio\SafeUrl\Provider\Google;
 
 require_once '../vendor/autoload.php';
 
-class Tryout {
+class GoogleExample {
+
+    protected $developerKey;
+
+    public function __construct($developerKey)
+    {
+        $this->developerKey = $developerKey;
+    }
+
     public function run()
     {
         $client = new Google_Client();
-        $client->setDeveloperKey("AIzaSyCHrRaWSkO9s7eX5YdyMrh4MIXjH1LCQQ8");
+        $client->setDeveloperKey($this->developerKey);
         $validator = new \Antevenio\SafeUrl\Validator(
             Google::create($client)
         );
@@ -20,5 +28,8 @@ class Tryout {
     }
 }
 
-$app = new Tryout();
+if ($argc < 2)
+    die("Please provide a developer key");
+
+$app = new GoogleExample($argv[1]);
 $app->run();
