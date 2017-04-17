@@ -12,7 +12,8 @@
   "autoload": {
     "psr-4": {
       "Antevenio\\SafeUrl\\": "src/",
-      "Example\\": "example/"
+      "Example\\": "example/",
+      "Antevenio\\SafeUrl\\Test\\": "test/"
     }
   },
   "require": {

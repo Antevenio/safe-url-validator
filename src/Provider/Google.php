@@ -17,9 +17,9 @@ class Google implements Provider {
         $this->service = $service;
     }
 
-    public static function create(Google_Client $client)
+    public function getService()
     {
-        return new self(new Google_Service_Safebrowsing($client));
+        return $this->service;
     }
 
     protected function buildThreatEntries($urls)

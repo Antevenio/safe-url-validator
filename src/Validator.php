@@ -14,7 +14,4 @@ class Validator {
     public function validateUrls(array $urls) {
         return ($this->provider->validateUrls($urls));
     }
-    public function checkLinksInHtml() {
-        // TODO: Do this.
-    }
 }
