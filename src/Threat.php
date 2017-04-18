@@ -4,9 +4,9 @@ namespace Antevenio\SafeUrl;
 
 class Threat
 {
-    protected $url;
-    protected $type;
-    protected $platform;
+    public $url;
+    public $type;
+    public $platform;
 
     /**
      * @param mixed $url
