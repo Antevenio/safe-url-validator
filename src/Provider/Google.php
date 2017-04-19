@@ -50,7 +50,11 @@ class Google implements Provider {
                 ]
             ]
         );
-        $results = $this->service->threatMatches->find($request);
+        try {
+            $results = $this->service->threatMatches->find($request);
+        } catch (\Exception $ex) {
+            throw new Exception("Google provider error", 0, $ex);
+        }
         return $this->getThreatsFromResults($results);
     }
 
