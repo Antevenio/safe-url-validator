@@ -103,7 +103,7 @@ class GoogleTest extends TestCase
     public function testLookupRemovesUrlsUsingValidators()
     {
         $urls = ["url1", "url2", "url3"];
-        $expectedUrlsToLookup = [1 => "url2"];
+        $expectedUrlsToLookup = ["url2"];
         $ret = [(new Threat())->setUrl("something")];
         $validators = [
             [

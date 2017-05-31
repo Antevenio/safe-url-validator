@@ -61,7 +61,7 @@ class Client {
     protected function validate(array $urls)
     {
         foreach ($this->validators as $validator) {
-            $urls = array_filter($urls, array($validator, "isValid"));
+            $urls = array_values(array_filter($urls, array($validator, "isValid")));
         }
         return $urls;
     }
