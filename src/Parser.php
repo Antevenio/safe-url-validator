@@ -1,7 +1,7 @@
 <?php
 namespace Antevenio\SafeUrl;
 
-interface UrlParser {
+interface Parser {
     /**
      * @param string
      * @return string

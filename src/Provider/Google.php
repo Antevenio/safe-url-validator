@@ -2,7 +2,6 @@
 namespace Antevenio\SafeUrl\Provider;
 
 use Antevenio\SafeUrl\Threat;
-use Google_Client;
 use Google_Service_Safebrowsing;
 use Google_Service_Safebrowsing_FindThreatMatchesRequest;
 use Antevenio\SafeUrl\Provider;
@@ -29,7 +28,7 @@ class Google implements Provider {
         }, $urls);
     }
 
-    public function validateUrls(array $urls)
+    public function lookup(array $urls)
     {
         $request = new Google_Service_Safebrowsing_FindThreatMatchesRequest(
             [

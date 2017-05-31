@@ -9,5 +9,5 @@ interface Provider {
      * @return Threat[]
      * @throws Exception
      */
-    public function validateUrls(array $urls);
+    public function lookup(array $urls);
 }

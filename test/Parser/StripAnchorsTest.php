@@ -1,18 +1,17 @@
 <?php
-namespace Antevenio\SafeUrl\Test\UrlParser;
-
-use Antevenio\SafeUrl\UrlParser;
+namespace Antevenio\SafeUrl\Test\Parser;
+use Antevenio\SafeUrl\Parser\StripAnchors;
 use PHPUnit\Framework\TestCase;
 
-class NoAnchorsTest extends TestCase {
+class StripAnchorsTest extends TestCase {
     /**
-     * @var UrlParser
+     * @var StripAnchors
      */
     protected $sut;
 
     public function setUp()
     {
-        $this->sut = new UrlParser\NoAnchors();
+        $this->sut = new StripAnchors();
     }
 
     public function parseDataProvider()

@@ -102,7 +102,7 @@ class GoogleTest extends TestCase
             ->with($this->equalTo($this->expectedRequest))
             ->will($this->returnValue($findThreatMatchesResponse));
 
-        $ret = $this->sut->validateUrls($this->urls);
+        $ret = $this->sut->lookup($this->urls);
         $this->assertInternalType("array", $ret);
         $this->assertCount(2, $ret);
         $this->assertEquals( $expectedResult, $ret );
@@ -125,6 +125,6 @@ class GoogleTest extends TestCase
             ->will($this->throwException(
                 $sampleException
             ));
-        $this->sut->validateUrls($this->urls);
+        $this->sut->lookup($this->urls);
     }
 }
