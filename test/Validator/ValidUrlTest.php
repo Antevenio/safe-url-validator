@@ -18,10 +18,15 @@ class ValidUrlTest extends TestCase {
         return [
             ["http://#", false],
             ["http://www.google.com", true],
+            ["HTTP://www.google.com", true],
             ["https://www.hotmail.com/", true],
+            ["HTTPS://www.hotmail.com/", true],
             ["https://aaa.net/hey.php", true],
             ["http://ssssss", true],
-            ["http://sss#s", true]
+            ["http://sss#s", true],
+            ["news://609235966", false],
+            ["ttps://missingh.com", false],
+            ["file:///C:/Users/R2/Desktop/Modificada/Abril.html", false]
         ];
     }
 
