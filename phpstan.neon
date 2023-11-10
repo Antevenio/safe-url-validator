@@ -1,0 +1,8 @@
+parameters:
+    level: 2
+    bootstrapFiles:        
+        - vendor/autoload.php
+    inferPrivatePropertyTypeFromConstructor: true
+    excludePaths:
+        - docker    
+
