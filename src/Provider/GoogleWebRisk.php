@@ -43,7 +43,7 @@ class GoogleWebRisk implements Provider
             $response = $this->httpClient->post(
                 $checkUrl,
                 [
-                    \GuzzleHttp\RequestOptions::JSON => ['url' => $url]
+                    \GuzzleHttp\RequestOptions::JSON => ['uri' => $url]
                 ]
             );
         } catch (\Exception $ex) {
