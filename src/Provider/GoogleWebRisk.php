@@ -47,7 +47,7 @@ class GoogleWebRisk implements Provider
                 ]
             );
         } catch (\Exception $ex) {
-            throw new \Exception("webrisk lookup call failed!", 0, $ex);
+            throw new Exception("webrisk lookup call failed!", 0, $ex);
         }
 
         $result = $response->getBody()->getContents();
