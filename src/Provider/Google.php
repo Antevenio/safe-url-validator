@@ -74,4 +74,9 @@ class Google implements Provider {
 
         return ($threats);
     }
+
+    public function getRedirectUrl($url)
+    {
+        return $url;
+    }
 }

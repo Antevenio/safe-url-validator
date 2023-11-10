@@ -10,4 +10,5 @@ interface Provider {
      * @throws Exception
      */
     public function lookup(array $urls);
+    public function getRedirectUrl($url);
 }
