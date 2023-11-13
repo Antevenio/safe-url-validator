@@ -50,6 +50,11 @@ class Client {
         return ($this->provider->lookup($urls));
     }
 
+    public function getRedirectUrl($url)
+    {
+        return $this->provider->getRedirectUrl($url);
+    }
+
     protected function parse(array $urls)
     {
         foreach ($this->parsers as $urlParser) {
