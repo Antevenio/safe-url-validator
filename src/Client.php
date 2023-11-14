@@ -14,6 +14,10 @@ class Client {
      * @var Validator[]
      */
     protected $validators;
+    /**
+     * @var RedirectionResolver
+     */
+    protected $redirectionResolver;
 
     /**
      * Validator constructor.
@@ -23,8 +27,13 @@ class Client {
         $this->provider = $provider;
         $this->parsers = [];
         $this->validators = [];
+        $this->redirectionResolver = null;
     }
 
+    public function setRedirectionResolver(RedirectionResolver $resolver)
+    {
+        $this->redirectionResolver = $resolver;
+    }
     /**
      * @param Parser $parser
      */
@@ -47,7 +56,19 @@ class Client {
     public function lookup(array $urls) {
         $urls = $this->parse($urls);
         $urls = $this->validate($urls);
+        $urls = $this->resolveUrls($urls);
         return ($this->provider->lookup($urls));
+    }
+
+    private function resolveUrls(array $urls)
+    {
+        $resolvedUrls = [];
+
+        foreach ($urls as $url) {
+            $resolvedUrls[] = $this->redirectionResolver->resolve($url);
+        }
+
+        return $resolvedUrls;
     }
 
     public function getRedirectUrl($url)
