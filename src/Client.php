@@ -62,6 +62,10 @@ class Client {
 
     private function resolveUrls(array $urls)
     {
+        if (!$this->redirectionResolver) {
+            return $urls;
+        }
+
         $resolvedUrls = [];
 
         foreach ($urls as $url) {
