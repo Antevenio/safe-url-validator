@@ -7,7 +7,7 @@ use GuzzleHttp\Client;
 
 class Factory
 {
-    public function __invoke()
+    public function create()
     {
         return new GuzzleHttp(new Client());
     }
