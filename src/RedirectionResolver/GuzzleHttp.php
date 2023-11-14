@@ -25,7 +25,7 @@ class GuzzleHttp implements RedirectionResolver
             [
                 'query'   => ['get' => 'params'],
                 'on_stats' => function (TransferStats $stats) use (&$url) {
-                    $url = $stats->getEffectiveUri();
+                    $url = $stats->getEffectiveUri()->__toString();
                 }
             ]
         )->getBody()->getContents();
