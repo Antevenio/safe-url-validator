@@ -24,12 +24,11 @@ class GuzzleHttp implements RedirectionResolver
             $this->client->get(
                 $url,
                 [
-                    'query' => ['get' => 'params'],
                     'on_stats' => function (TransferStats $stats) use (&$url) {
                         $url = $stats->getEffectiveUri()->__toString();
                     }
                 ]
-            )->getBody()->getContents();
+            );
         } catch (\Exception $ex) {
             // TODO: Maybe log something here in the future.
         }

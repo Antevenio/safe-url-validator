@@ -19,6 +19,8 @@ class Client {
      */
     protected $redirectionResolver;
 
+    protected $resolverEnabled;
+
     /**
      * Validator constructor.
      * @param Provider $provider
@@ -28,12 +30,24 @@ class Client {
         $this->parsers = [];
         $this->validators = [];
         $this->redirectionResolver = null;
+        $this->resolverEnabled = false;
     }
 
     public function setRedirectionResolver(RedirectionResolver $resolver)
     {
         $this->redirectionResolver = $resolver;
     }
+
+    public function enableResolver()
+    {
+        $this->resolverEnabled = true;
+    }
+
+    public function disableResolver()
+    {
+        $this->resolverEnabled = false;
+    }
+
     /**
      * @param Parser $parser
      */
@@ -62,7 +76,7 @@ class Client {
 
     private function resolveUrls(array $urls)
     {
-        if (!$this->redirectionResolver) {
+        if (!$this->redirectionResolver || !$this->resolverEnabled) {
             return $urls;
         }
 
