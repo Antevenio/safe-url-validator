@@ -24,6 +24,8 @@ class GuzzleHttp implements RedirectionResolver
             $this->client->get(
                 $url,
                 [
+                    'connect_timeout' => 1,
+                    'timeout' => 1,
                     'on_stats' => function (TransferStats $stats) use (&$url) {
                         $url = $stats->getEffectiveUri()->__toString();
                     }
