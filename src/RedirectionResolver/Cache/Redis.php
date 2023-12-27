@@ -31,6 +31,6 @@ class Redis implements Cache
 
     public function set($url, $resolvedUrl)
     {
-        $this->redis->set($this->getKeyForUrl($url), $resolvedUrl, self::TTL);
+        $this->redis->set($this->getKeyForUrl($url), $resolvedUrl, "EX", self::TTL);
     }
 }
