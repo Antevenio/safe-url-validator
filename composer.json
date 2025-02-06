@@ -17,10 +17,10 @@
     }
   },
   "require": {
-    "google/apiclient": "^2.1",
+    "google/apiclient": "~2.1.0",
     "ext-curl": "*",
     "ext-json": "*",
-    "guzzlehttp/guzzle": "6.2.2",
+    "guzzlehttp/guzzle": "^6.0",
     "predis/predis": "^1.0"
   },
   "require-dev": {
